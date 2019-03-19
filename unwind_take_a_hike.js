@@ -30,6 +30,9 @@ function rollDie(max){
 	let roll = Math.floor(Math.random()* max + 1);
 	return roll;
 	
+function rollTwoDice(max){
+	let totalRoll = (Math.floor(Math.random()* max + 1)* S2);
+}
 
 }
 
@@ -70,4 +73,36 @@ function rollDie(max){
 	}
 
 
-	switch(rollDie(4)*2)
+	switch(rollTwoDice(4)){
+		case num2:
+			alert("Early afternoon, 2 pm");
+			break;
+		case num3:
+		case num4:
+			alert("Noon");
+			break;
+		case num5:
+		case num6:
+			alert("Late morning, 9:30 am");
+			break;
+		case num7:
+		case num8:
+			alert("Early morning, 7 am");
+			break;
+	}
+
+	switch(rollTwoDice(3)){
+		case num2:
+			alert("75 degrees with sporadic clouds.");
+			break;
+		case num3:
+		case num4:
+			alert("79 degrees and sunny");
+			break;
+		case num5:
+		case num6:
+			alert("82 degrees and lightly cloudy with a cool breeze.");
+			break;
+	}
+
+	switch()

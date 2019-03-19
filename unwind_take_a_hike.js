@@ -5,16 +5,6 @@
 // end at the conclusion of the path. The goal of this game is that it's short enough that it can fit into a short break and 
 // long enough to help ease the user's mind.
 
-let num1 = 1;
-let num2 = 2;
-let num3 = 3;
-let num4 = 4;
-let num5 = 5; 
-let num6 = 6;
-let num7 = 7;
-let num8 = 8;
-let num9 = 9;
-let num10 = 10;
 
 function initialPrompt(stressPoints){
 	stressPoints = prompt("Please enter your stress score.");
@@ -23,59 +13,43 @@ function initialPrompt(stressPoints){
 
 	let diceArray = [9, 5, 4, 3, 8, 6];
 	
-	let functionsArray = [nineSided, fiveSided, fourSided, threeSided, eightSided, sixSided]
+	let functionsArray = [nineSided(), fiveSided(), fourSided(), threeSided(), eightSided(), sixSided()]
 	
-	for(let i = 0; i >= stressPoints; i++){
+	for(diceArray = 0; diceArray <= stressPoints; i++){
 
-	function nineSided(i){
-		functionsArray[0](rollDie(9))
-		if (i <= 3){
+	function nineSided(roll){
+		rollDie(9);
+		functionsArray[0](9);
+		pointCalcDie();
+		if (roll <= 3){
 			alert("Take three deep breaths.");
 			console.log(pointCalcDie());}
-		else if (i < 7){
+		else if (roll < 7){
 			alert("Take four deep breaths.");
 			console.log(pointCalcDie());}
 		else{
 			alert("Take five deep breaths.");
 			console.log(pointCalcDie());}
 	}
-}
+	
+	function fiveSided(roll){
+		if (roll == 1){
+			alert("Imagine sitting in a city park.");
+		}
+		else if (roll == 2){
+			alert("Imagine yourself sitting in a park with a pond.");
+		}
+		else if (roll == 3){
+			alert("");
+		}
+		else if (roll == 4){
+			alert("Imagine yourself up north sitting on the dock of a small lake.");
+		}
+		else{
+			alert("Imagine yourself standing in a national park.");
+		}
 
-	// switch(rollDie(9)){
-	// 	case num1:
-	// 	case num2:
-	// 	case num3:
-						
-	// 		break;
-	// 	case num4:
-	// 	case num5:
-	// 	case num6:
-			
-	// 		break;
-	// 	case num7:
-	// 	case num8:
-	// 	case num9:
-	// 		alert
-	// 		break;
-	// }
-
-	// switch(rollDie(5)){
-	// 	case num1: 
-	// 		alert("Imagine sitting in a city park.");
-	// 		break;
-	// 	case num2:
-	// 		alert("Imagine yourself sitting in a park with a pond.");
-	// 		break;
-	// 	case num3:
-	// 		alert("");
-	// 		break;
-	// 	case num4:
-	// 		alert("Imagine yourself up north sitting on the dock of a small lake.");
-	// 		break;
-	// 	case num5:
-	// 		alert("Imagine yourself standing in a national park.");
-	// 		break;
-	// }
+	}
 
 
 	// switch(rollTwoDice(4)){
@@ -139,6 +113,9 @@ function initialPrompt(stressPoints){
 	// 		alert("Crickets");
 	// 		break;
 	// }
+if (roll == 1){}
+		else if (roll == ){}
+		else{}
 
 
 }
@@ -147,11 +124,14 @@ initialPrompt();
 
 function rollDie(max){
 	let roll = Math.floor(Math.random()* max + 1);
-	console.log(roll);
+	console.log("You rolled:", roll);
+}
+
+function rollTwoDice(max){
+	let totalRoll = (Math.floor(Math.random()* max + 1)* 2);
 }
 
 function pointCalcDie(roll){
 	let currentScore = stressPoints - roll;
-	console.log("currentScore")
+	console.log("Your current stress score has lowered to:", currentScore)
 }
-

@@ -31,7 +31,8 @@ function rollDie(max){
 	return roll;
 	
 function rollTwoDice(max){
-	let totalRoll = (Math.floor(Math.random()* max + 1)* S2);
+	let totalRoll = (Math.floor(Math.random()* max + 1)* 2);
+	return totalRoll;
 }
 
 }
@@ -105,4 +106,32 @@ function rollTwoDice(max){
 			break;
 	}
 
-	switch()
+	switch(rollDie(8)){
+		case totalRoll % 2 == 0:
+			alert("Cup of coffee.");
+			break;
+		case totalRoll % 2 != 0:
+			alert("Cup of tea.");
+			break;
+	}
+
+	switch(rollDie(6)){
+		case num1:
+			alert("Plane overhead");
+			break;
+		case num2:
+			alert("Wood pecker");
+			break;
+		case num3:
+			alert("Squirrels climbing trees");
+			break;
+		case num4:
+			alert("Birds singing");
+			break;
+		case num5:
+			alert("Rustling of trees and bushes");
+			break;
+		case num6:
+			alert("Crickets");
+			break;
+	}

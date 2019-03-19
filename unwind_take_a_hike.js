@@ -22,6 +22,9 @@ function initialPrompt(){
 
 
 }
+initialPrompt();
+
+
 
 function rollDie(max){
 	let roll = Math.floor(Math.random()* max + 1);
@@ -30,7 +33,7 @@ function rollDie(max){
 
 }
 
-	switch(rollDie(10)){
+	switch(rollDie(9)){
 		case num1:
 		case num2:
 		case num3:
@@ -43,10 +46,28 @@ function rollDie(max){
 			break;
 		case num7:
 		case num8:
-		case num9:
-		case num10:
-			alert("Take five deep breaths.")
+		case num9::
+			alert("Take five deep breaths.");
 			break;
 	}
 
-initialPrompt();
+	switch(rollDie(5)){
+		case num1: 
+			alert("Imagine sitting in a city park.");
+			break;
+		case num2:
+			alert("Imagine yourself sitting in a park with a pond.");
+			break;
+		case num3:
+			alert("");
+			break;
+		case num4:
+			alert("Imagine yourself up north sitting on the dock of a small lake.");
+			break;
+		case num5:
+			alert("Imagine yourself standing in a national park.");
+			break;
+	}
+
+
+	switch(rollDie(4)*2)

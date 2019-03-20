@@ -26,23 +26,33 @@ function initialPrompt(){
 	newScore = pointCalc(resultFiveSided, currentPoints);
 	alert("Your current score is: " + newScore);
 
-	alert("Roll a virtual pair of four sided dice...");
-	let resultFourSided = rollTwoDice(8);
+	alert("Roll a virtual  pair of four sided dice...");
+	let resultFourSided = rollTwoDice(4);
 	alert("You rolled: " + resultFourSided);
 	fourSided(resultFourSided);
 	newScore = pointCalc(resultFourSided, currentPoints);
 	alert("Your current score is: " + newScore);
 
-	alert("Roll a virtual pair of three sided dice...")
-	let resultThreeSided = rollTwoDice(6);
+	alert("Roll a virtual pair of three sided dice...");
+	let resultThreeSided = rollTwoDice(3);
 	alert("You rolled: " + resultThreeSided);
 	threeSided(resultThreeSided);
 	newScore = pointCalc(resultThreeSided, currentPoints);
 	alert("Your current score is: " + newScore);
 
-	eightSided();
+	alert("Roll a virtual eight sided die...");
+	let resultEightSided = rollDie(8);
+	alert("You rolled: " + resultThreeSided);
+	eightSided(resultEightSided);
+	newScore = pointCalc(resultEightSided, currentPoints);
+	alert("Your current score is: " + newScore);
 
-	sixSided();	
+	alert("Roll a virtual six sided die...");
+	let resultSixSided = rollDie(6);
+	alert("You rolled: " + resultSixSided);
+	sixSided(resultSixSided);
+	newScore = pointCalc(resultEightSided, currentPoints);
+	alert("Your current score is: " + newScore);
 
 	endAlert();
 }
@@ -57,7 +67,9 @@ function rollDie(max){
 }
 
 function rollTwoDice(max){
-	let totalRoll = (Math.floor(Math.random()* max + 1)* 2);
+	let die1 = rollDie(max);
+	let die2 = rollDie(max);
+	let totalRoll = die1 + die2;
 	console.log("You rolled: " + totalRoll);
 	return totalRoll;
 }
@@ -165,7 +177,7 @@ function endAlert(){
 	let finalScore = newScore;
 
 	if (newScore <= 0){
-		alert("Congratulations! You rolled away all of your stress points!")
+		alert("Congratulations! You rolled away all of your stress points! It looks like you have gotten enough time away.")
 	}
 	else{
 		alert("Thanks for playing! It looks like you might need some more mental space because you still have" + finalScore + " points left. Feel free to play again!")

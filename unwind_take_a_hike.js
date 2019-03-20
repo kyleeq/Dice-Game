@@ -20,7 +20,8 @@ function initialPrompt(stressPoints){
 	function nineSided(roll){
 		roll = alert("Roll the die in order to see where you are.", rollDie(9);
 		functionsArray[0](9);
-		pointCalcDie();
+		console.log(pointCalcDie());
+		
 		if (roll <= 3){
 			alert("Take three deep breaths.");
 			console.log(pointCalcDie());}
@@ -34,6 +35,7 @@ function initialPrompt(stressPoints){
 	
 	function fiveSided(roll){
 		roll = rollDie(5);
+
 		if (roll == 1){
 			alert("Imagine sitting in a city park.");
 		}
@@ -54,23 +56,21 @@ function initialPrompt(stressPoints){
 
 	function fourSides(roll){
 		roll = rollTwoDice(4);
+
+		if (roll < 3){
+			alert("Early afternoon, 2 pm");
+		}
+		if else (roll <= 4){
+			alert("Noon");
+		}
+		if else (roll < 7){
+			alert("Late morning, 9:30 am");
+		}
+		else{
+			alert("Early morning, 7 am");
+		}
+
 	}
-	// 	case num2:
-	// 		alert("Early afternoon, 2 pm");
-	// 		break;
-	// 	case num3:
-	// 	case num4:
-	// 		alert("Noon");
-	// 		break;
-	// 	case num5:
-	// 	case num6:
-	// 		alert("Late morning, 9:30 am");
-	// 		break;
-	// 	case num7:
-	// 	case num8:
-	// 		alert("Early morning, 7 am");
-	// 		break;
-	// }
 
 		function threeSides(roll){
 			roll = rollTwoDice(3);

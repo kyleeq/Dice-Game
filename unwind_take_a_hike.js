@@ -11,14 +11,14 @@ function initialPrompt(){
 	let currentPoints = Math.floor(parseInt(stressPoints));	
 	
 	
-	alert("Roll to see how many breaths to take")
+	alert("Roll a virtual nine sided die to see how many breaths to take")
 	
 	nineSided();
 
 	let result9SidedDie = rollDie(9);
 	nineSided(result9SidedDie);
 	currentPoints = pointCalc();
-	console.log("Your current score is: " + currentPoints);
+	console.log("Your current score is: " + newScore);
 
 	
 	fiveSided();
@@ -27,7 +27,11 @@ function initialPrompt(){
 
 	threeSided();
 
+	eightSided();
+
 	sixSided();	
+
+	endAlert();
 }
 
 initialPrompt();
@@ -44,9 +48,8 @@ function rollTwoDice(max){
 }
 
 function pointCalc(roll, currentScore){
-	// currentScore = currentScore - roll;
 	let newScore = currentScore - roll;
-	console.log("Your current stress score has lowered to:", currentScore)
+	console.log("Your current stress score has lowered to:", newScore)
 	return newScore;
 }
 
@@ -54,39 +57,38 @@ function nineSided(roll){
 	
 	if (roll <= 3){
 		alert("Take three deep breaths.");
+	}
 	else if (roll < 7){
 		alert("Take four deep breaths.");
-		console.log(pointCalc());}
+		console.log(pointCalc());
+	}
 	else{
 		alert("Take five deep breaths.");
-		console.log(pointCalc());}
+		console.log(pointCalc());
+	}
 }
 
 function fiveSided(roll){
-		roll = rollDie(5);
-		pointCalc();
-
-		if (roll == 1){
-			alert("Imagine sitting in a city park.");
-		}
-		else if (roll == 2){
-			alert("Imagine yourself sitting in a park with a pond.");
-		}
-		else if (roll == 3){
-			alert("");
-		}
-		else if (roll == 4){
-			alert("Imagine yourself up north sitting on the dock of a small lake.");
-		}
-		else{
-			alert("Imagine yourself standing in a national park.");
-		}
+	
+	if (roll == 1){
+		alert("Imagine sitting in a city park.");
 	}
+	else if (roll == 2){
+		alert("Imagine yourself sitting in a park with a pond.");
+	}
+	else if (roll == 3){
+		alert("");
+	}
+	else if (roll == 4){
+		alert("Imagine yourself up north sitting on the dock of a small lake.");
+	}
+	else{
+		alert("Imagine yourself standing in a national park.");
+	}
+}
 
 function fourSided(roll){
-	roll = rollTwoDice(4);
-	pointCalc();
-
+	
 	if (roll < 3){
 		alert("Early afternoon, 2 pm");
 	}
@@ -103,8 +105,6 @@ function fourSided(roll){
 }
 
 function threeSided(roll){
-	roll = rollTwoDice(3);
-	pointCalc();
 	
 	if (roll < 3){
 		alert("75 degrees with sporadic clouds.");
@@ -118,9 +118,7 @@ function threeSided(roll){
 }
 
 function eightSides(roll){
-	roll = rollDie(8);
-	pointCalc();
-		
+	
 	if (roll % 2 == 0){
 		alert("Cup of coffee.");
 	}
@@ -130,9 +128,6 @@ function eightSides(roll){
 }
 
 function sixSided(roll){
-	roll = rollDie(6);
-	pointCalc();
-
 	if (roll == 1){
 		alert("Plane overhead");
 	}
@@ -152,3 +147,13 @@ function sixSided(roll){
 		alert("Crickets");
 	}
 }
+
+function endAlert(){
+	let finalScore = newScore;
+
+	if (newScore <= 0){
+		alert("Congratulations! You rolled away all of your stress points!")
+	}
+	else{
+		alert("Thanks for playing! It looks like you might need some more mental space because you still have" + finalScore + " points left. Feel free to play again!")
+	}

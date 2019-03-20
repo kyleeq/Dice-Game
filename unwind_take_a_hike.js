@@ -7,40 +7,30 @@
 
 
 function initialPrompt(stressPoints){
-	stressPoints = prompt("Please enter your stress score.");
+	stressPoints = prompt("Please enter your stress score. A suggested point value is between 15 and 30 points.");
 	stressPoints = Math.floor(parseInt(stressPoints));
-	let currentPoints;
-
-	// let diceArray = [9, 5, 4, 3, 8, 6];
+	let currentPoints;	
 	
 	
-	
-	for(functionsArray = 0; functionsArray <= currentPoints; functionsArray++){
-
-	let functionsArray = [nineSided(roll), fiveSided(roll), fourSided(roll), threeSided(roll), eightSided(roll), sixSided(roll)]
-	
-	function nineSided(roll){
-		console.log(alert("Roll to see how many breaths to take"))
+	function nineSided(roll = rollDie()){
+		alert("Roll to see how many breaths to take")
 		roll = rollDie(9);
-		currentPints = stressPoints - roll;
-		// functionsArray[0](9);
 		
 		if (roll <= 3){
 			alert("Take three deep breaths.");
-			console.log(pointCalcDie());}
+			console.log(pointCalc());}
 		else if (roll < 7){
 			alert("Take four deep breaths.");
-			console.log(pointCalcDie());}
+			console.log(pointCalc());}
 		else{
 			alert("Take five deep breaths.");
-			console.log(pointCalcDie());}
-	console.log(pointCalcDie());
+			console.log(pointCalc());}
 	}
-	
+	nineSided();
 
 	function fiveSided(roll){
 		roll = rollDie(5);
-		currentPints = stressPoints - roll;
+		pointCalc();
 
 		if (roll == 1){
 			alert("Imagine sitting in a city park.");
@@ -57,12 +47,13 @@ function initialPrompt(stressPoints){
 		else{
 			alert("Imagine yourself standing in a national park.");
 		}
-
 	}
 
-	function fourSides(roll){
+	fiveSided();
+
+	function fourSided(roll){
 		roll = rollTwoDice(4);
-		currentPints = stressPoints - roll;
+		pointCalc();
 
 		if (roll < 3){
 			alert("Early afternoon, 2 pm");
@@ -79,9 +70,11 @@ function initialPrompt(stressPoints){
 
 	}
 
-	function threeSides(roll){
+	fourSided();
+
+	function threeSided(roll){
 		roll = rollTwoDice(3);
-		currentPints = stressPoints - roll;
+		pointCalc();
 		
 		if (roll < 3){
 			alert("75 degrees with sporadic clouds.");
@@ -94,42 +87,45 @@ function initialPrompt(stressPoints){
 		}
 	}
 
-		function eightSides(roll){
-			roll = rollDie(8);
-			currentPints = stressPoints - roll;
+	threeSided();
+
+	function eightSides(roll){
+		roll = rollDie(8);
+		pointCalc();
 			
-			if (roll % 2 == 0){
-				alert("Cup of coffee.");
-			}
-			else{
-				alert("Cup of tea.");
-			}
+		if (roll % 2 == 0){
+			alert("Cup of coffee.");
 		}
-
-		function sixSides(roll){
-			roll = rollDie(6);
-			currentPints = stressPoints - roll;
-
-			if (roll == 1){
-				alert("Plane overhead");
-			}
-			else if (roll == 2){
-				alert("Wood pecker");
-			}
-			else if (roll == 3){
-				alert("Squirrels climbing trees");
-			}
-			else if (roll == 4){
-				alert("Birds singing");
-			}
-			else if (roll == 5){
-				alert("Rustling of trees and bushes");
-			}
-			else{
-				alert("Crickets");
-			}
+		else{
+			alert("Cup of tea.");
 		}
 	}
+
+	function sixSided(roll){
+		roll = rollDie(6);
+		pointCalc();
+
+		if (roll == 1){
+			alert("Plane overhead");
+		}
+		else if (roll == 2){
+			alert("Wood pecker");
+		}
+		else if (roll == 3){
+			alert("Squirrels climbing trees");
+		}
+		else if (roll == 4){
+			alert("Birds singing");
+		}
+		else if (roll == 5){
+			alert("Rustling of trees and bushes");
+		}
+		else{
+			alert("Crickets");
+		}
+	}
+
+	sixSided();
 }
 
 initialPrompt();
@@ -137,14 +133,15 @@ initialPrompt();
 
 function rollDie(max){
 	let roll = Math.floor(Math.random()* max + 1);
-	console.log("You rolled:", roll);
+	console.log("You rolled: " + roll);
 }
 
 function rollTwoDice(max){
 	let totalRoll = (Math.floor(Math.random()* max + 1)* 2);
+	console.log("You rolled: " + totalRoll);
 }
 
-// function pointCalcDie(roll){
-// 	let currentScore = stressPoints - roll;
-// 	console.log("Your current stress score has lowered to:", currentScore)
-// }
+function pointCalc(roll){
+	let currentScore = stressPoints - roll;
+	console.log("Your current stress score has lowered to:", currentScore)
+}

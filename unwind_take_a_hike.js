@@ -9,16 +9,15 @@
 function initialPrompt(){
 	let stressPoints = prompt("Please enter your stress score. A suggested point value is between 15 and 30 points.");
 	let currentPoints = Math.floor(parseInt(stressPoints));	
+	let NewScore;
 	
 	
 	alert("Roll a virtual nine sided die to see how many breaths to take")
-	
-	nineSided();
 
 	let result9SidedDie = rollDie(9);
 	nineSided(result9SidedDie);
-	currentPoints = pointCalc();
-	console.log("Your current score is: " + newScore);
+	newScore = pointCalc(result9SidedDie, currentPoints);
+	alert("Your current score is: " + newScore);
 
 	
 	fiveSided();
@@ -40,11 +39,13 @@ initialPrompt();
 function rollDie(max){
 	let roll = Math.floor(Math.random()* max + 1);
 	console.log("You rolled: " + roll);
+	return roll;
 }
 
 function rollTwoDice(max){
 	let totalRoll = (Math.floor(Math.random()* max + 1)* 2);
 	console.log("You rolled: " + totalRoll);
+	return totalRoll;
 }
 
 function pointCalc(roll, currentScore){
@@ -60,11 +61,9 @@ function nineSided(roll){
 	}
 	else if (roll < 7){
 		alert("Take four deep breaths.");
-		console.log(pointCalc());
 	}
 	else{
 		alert("Take five deep breaths.");
-		console.log(pointCalc());
 	}
 }
 
@@ -157,3 +156,4 @@ function endAlert(){
 	else{
 		alert("Thanks for playing! It looks like you might need some more mental space because you still have" + finalScore + " points left. Feel free to play again!")
 	}
+}

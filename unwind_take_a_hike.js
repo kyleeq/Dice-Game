@@ -9,7 +9,7 @@
 function initialPrompt(){
 	let stressPoints = prompt("Please enter your stress score. A suggested point value is between 15 and 30 points.");
 	let currentPoints = Math.floor(parseInt(stressPoints));	
-	let NewScore;
+	let newScore;
 	
 	
 	alert("Roll a virtual nine sided die to see how many breaths to take.");
@@ -54,7 +54,7 @@ function initialPrompt(){
 	newScore = pointCalc(resultEightSided, currentPoints);
 	alert("Your current score is: " + newScore);
 
-	endAlert();
+	endAlert(newScore);
 }
 
 initialPrompt();
@@ -62,7 +62,6 @@ initialPrompt();
 
 function rollDie(max){
 	let roll = Math.floor(Math.random()* max + 1);
-	console.log("You rolled: " + roll);
 	return roll;
 }
 
@@ -70,13 +69,11 @@ function rollTwoDice(max){
 	let die1 = rollDie(max);
 	let die2 = rollDie(max);
 	let totalRoll = die1 + die2;
-	console.log("You rolled: " + totalRoll);
 	return totalRoll;
 }
 
-function pointCalc(roll, currentScore){
-	let newScore = currentScore - roll;
-	console.log("Your current stress score has lowered to:", newScore)
+function pointCalc(roll, currentPoints){
+	let newScore = currentPoints - roll;
 	return newScore;
 }
 
@@ -174,9 +171,9 @@ function sixSided(roll){
 }
 
 function endAlert(){
-	let finalScore = newScore;
+	let newScore = finalScore;
 
-	if (newScore <= 0){
+	if (finalScore <= 0){
 		alert("Congratulations! You rolled away all of your stress points! It looks like you have gotten enough time away.")
 	}
 	else{

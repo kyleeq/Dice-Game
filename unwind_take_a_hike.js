@@ -9,8 +9,7 @@
 function initialPrompt(){
 	let stressPoints = prompt("Please enter your stress score. A suggested point value is between 15 and 30 points.");
 	let currentPoints = Math.floor(parseInt(stressPoints));	
-	let newScore;
-	
+	let newScore;	
 	
 	alert("Roll a virtual nine sided die to see how many breaths to take.");
 	let resultNineSided = rollDie(9);
@@ -109,15 +108,15 @@ function fiveSided(roll){
 	}
 }
 
-function fourSided(roll){
+function fourSided(totalRoll){
 	
-	if (roll < 3){
+	if (totalRoll < 3){
 		alert("Early afternoon, 2 pm");
 	}
-	else if (roll <= 4){
+	else if (totalRoll <= 4){
 		alert("Noon");
 	}
-	else if (roll < 7){
+	else if (totalRoll < 7){
 		alert("Late morning, 9:30 am");
 	}
 	else{
@@ -126,12 +125,12 @@ function fourSided(roll){
 
 }
 
-function threeSided(roll){
+function threeSided(totalRoll){
 	
-	if (roll < 3){
+	if (totalRoll < 3){
 		alert("75 degrees with sporadic clouds.");
 	}
-	else if (roll <= 4){
+	else if (totalRoll <= 4){
 		alert("79 degrees and sunny");
 	}
 	else{
@@ -139,7 +138,7 @@ function threeSided(roll){
 	}
 }
 
-function eightSides(roll){
+function eightSided(roll){
 	
 	if (roll % 2 == 0){
 		alert("Cup of coffee.");
@@ -170,13 +169,12 @@ function sixSided(roll){
 	}
 }
 
-function endAlert(){
-	let newScore = finalScore;
+function endAlert(newScore){;
 
-	if (finalScore <= 0){
+	if (newScore <= 0){
 		alert("Congratulations! You rolled away all of your stress points! It looks like you have gotten enough time away.")
 	}
 	else{
-		alert("Thanks for playing! It looks like you might need some more mental space because you still have" + finalScore + " points left. Feel free to play again!")
+		alert("Thanks for playing! It looks like you might need some more mental space because you still have " + newScore + " points left. Feel free to play again!")
 	}
 }

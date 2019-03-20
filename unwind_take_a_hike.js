@@ -99,28 +99,26 @@ function initialPrompt(stressPoints){
 
 		function sixSides(roll){
 			roll = rollDie(6);
-		}
-	// 		case num1:
-	// 			alert("Plane overhead");
-	// 		break;
-	// 	case num2:
-	// 		alert("Wood pecker");
-	// 		break;
-	// 	case num3:
-	// 		alert("Squirrels climbing trees");
-	// 		break;
-	// 	case num4:
-	// 		alert("Birds singing");
-	// 		break;
-	// 	case num5:
-	// 		alert("Rustling of trees and bushes");
-	// 		break;
-	// 	case num6:
-	// 		alert("Crickets");
-	// 		break;
-	// }
-		
 
+			if (roll == 1){
+				alert("Plane overhead");
+			}
+			else if (roll == 2){
+				alert("Wood pecker");
+			}
+			else if (roll == 3){
+				alert("Squirrels climbing trees");
+			}
+			else if (roll == 4){
+				alert("Birds singing");
+			}
+			else if (roll == 5){
+				alert("Rustling of trees and bushes");
+			}
+			else{
+				alert("Crickets");
+			}
+		}
 
 }
 initialPrompt();

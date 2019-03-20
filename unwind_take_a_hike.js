@@ -12,19 +12,29 @@ function initialPrompt(){
 	let NewScore;
 	
 	
-	alert("Roll a virtual nine sided die to see how many breaths to take")
-
-	let result9SidedDie = rollDie(9);
-	nineSided(result9SidedDie);
-	newScore = pointCalc(result9SidedDie, currentPoints);
+	alert("Roll a virtual nine sided die to see how many breaths to take.");
+	let resultNineSided = rollDie(9);
+	nineSided(resultNineSided);
+	newScore = pointCalc(resultNineSided, currentPoints);
 	alert("Your current score is: " + newScore);
 
-	
-	fiveSided();
+	alert("Roll a virtual five sided die to see where we will be visualizing ourself.");
+	let resultFiveSided = rollDie(5);
+	fiveSided(resultFiveSided);
+	newScore = pointCalc(resultFiveSided, currentPoints);
+	alert("Your current score is: " + newScore);
 
-	fourSided();
+	alert("Roll a virtual pair of four sided dice...");
+	let resultFourSided = rollTwoDice(8);
+	fourSided(resultFourSided);
+	newScore = pointCalc(resultFourSided, currentPoints);
+	alert("Your current score is: " + newScore);
 
-	threeSided();
+	alert("Roll a virtual pair of three sided dice...")
+	let resultThreeSided = rollTwoDice(6);
+	threeSided(resultThreeSided);
+	newScore = pointCalc(resultThreeSided, currentPoints);
+	alert("Your current score is: " + newScore);
 
 	eightSided();
 

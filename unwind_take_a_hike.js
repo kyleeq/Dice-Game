@@ -22,36 +22,36 @@ function initialPrompt(){
 	let resultFiveSided = rollDie(5);
 	alert("You rolled: " + resultFiveSided);
 	fiveSided(resultFiveSided);
-	newScore = pointCalc(resultFiveSided, currentPoints);
+	newScore = pointCalc(resultFiveSided, newScore);
 	alert("Your current score is: " + newScore);
 
 	alert("Roll a virtual  pair of four sided dice...");
 	let resultFourSided = rollTwoDice(4);
 	alert("You rolled: " + resultFourSided);
 	fourSided(resultFourSided);
-	newScore = pointCalc(resultFourSided, currentPoints);
+	newScore = pointCalc(resultFourSided, newScore);
 	alert("Your current score is: " + newScore);
 
 	alert("Roll a virtual pair of three sided dice...");
 	let resultThreeSided = rollTwoDice(3);
 	alert("You rolled: " + resultThreeSided);
 	threeSided(resultThreeSided);
-	newScore = pointCalc(resultThreeSided, currentPoints);
+	newScore = pointCalc(resultThreeSided, newScore);
 	alert("Your current score is: " + newScore);
 
 	alert("Roll a virtual eight sided die...");
 	let resultEightSided = rollDie(8);
-	alert("You rolled: " + resultThreeSided);
+	alert("You rolled: " + resultEightSided);
 	eightSided(resultEightSided);
-	newScore = pointCalc(resultEightSided, currentPoints);
+	newScore = pointCalc(resultEightSided, newScore);
 	alert("Your current score is: " + newScore);
 
 	alert("Roll a virtual six sided die...");
 	let resultSixSided = rollDie(6);
 	alert("You rolled: " + resultSixSided);
 	sixSided(resultSixSided);
-	newScore = pointCalc(resultEightSided, currentPoints);
-	alert("Your current score is: " + newScore);
+	newScore = pointCalc(resultSixSided, newScore);
+	alert("Your final score is: " + newScore);
 
 	endAlert(newScore);
 }
@@ -98,7 +98,7 @@ function fiveSided(roll){
 		alert("Imagine yourself sitting in a park with a pond.");
 	}
 	else if (roll == 3){
-		alert("");
+		alert("Imagine yourself doing something relaxing");
 	}
 	else if (roll == 4){
 		alert("Imagine yourself up north sitting on the dock of a small lake.");

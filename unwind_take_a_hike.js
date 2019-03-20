@@ -88,14 +88,14 @@ function initialPrompt(stressPoints){
 
 		function eightSides(roll){
 			roll = rollDie(8);
+			
+			if (roll % 2 == 0){
+				alert("Cup of coffee.");
+			}
+			else{
+				alert("Cup of tea.");
+			}
 		}
-	// 	case roll % 2 == 0:
-	// 			alert("Cup of coffee.");
-	// 			break;
-	// 		case roll % 2 != 0:
-	// 			alert("Cup of tea.");
-	// 			break;
-	// 	}
 
 		function sixSides(roll){
 			roll = rollDie(6);

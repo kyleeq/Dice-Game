@@ -72,21 +72,19 @@ function initialPrompt(stressPoints){
 
 	}
 
-		function threeSides(roll){
-			roll = rollTwoDice(3);
+	function threeSides(roll){
+		roll = rollTwoDice(3);
+		
+		if (roll < 3){
+			alert("75 degrees with sporadic clouds.");
 		}
-	// 	case num2:
-	// 		alert("75 degrees with sporadic clouds.");
-	// 		break;
-	// 	case num3:
-	// 	case num4:
-	// 		alert("79 degrees and sunny");
-	// 		break;
-	// 	case num5:
-	// 	case num6:
-	// 		alert("82 degrees and lightly cloudy with a cool breeze.");
-	// 		break;
-	// }
+		else if (roll <= 4){
+			alert("79 degrees and sunny");
+		}
+		else{
+			alert("82 degrees and lightly cloudy with a cool breeze.");
+		}
+	}
 
 		function eightSides(roll){
 			roll = rollDie(8);

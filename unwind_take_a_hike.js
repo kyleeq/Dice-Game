@@ -18,7 +18,7 @@ function initialPrompt(stressPoints){
 	for(diceArray = 0; diceArray <= stressPoints; i++){
 
 	function nineSided(roll){
-		rollDie(9);
+		roll = alert("Roll the die in order to see where you are.", rollDie(9);
 		functionsArray[0](9);
 		pointCalcDie();
 		if (roll <= 3){
@@ -33,6 +33,7 @@ function initialPrompt(stressPoints){
 	}
 	
 	function fiveSided(roll){
+		roll = rollDie(5);
 		if (roll == 1){
 			alert("Imagine sitting in a city park.");
 		}
@@ -51,8 +52,9 @@ function initialPrompt(stressPoints){
 
 	}
 
-
-	// switch(rollTwoDice(4)){
+	function fourSides(roll){
+		roll = rollTwoDice(4);
+	}
 	// 	case num2:
 	// 		alert("Early afternoon, 2 pm");
 	// 		break;
@@ -70,7 +72,9 @@ function initialPrompt(stressPoints){
 	// 		break;
 	// }
 
-	// switch(rollTwoDice(3)){
+		function threeSides(roll){
+			roll = rollTwoDice(3);
+		}
 	// 	case num2:
 	// 		alert("75 degrees with sporadic clouds.");
 	// 		break;
@@ -84,7 +88,9 @@ function initialPrompt(stressPoints){
 	// 		break;
 	// }
 
-	// switch(rollDie(8)){
+		function eightSides(roll){
+			roll = rollDie(8);
+		}
 	// 	case roll % 2 == 0:
 	// 			alert("Cup of coffee.");
 	// 			break;
@@ -93,7 +99,9 @@ function initialPrompt(stressPoints){
 	// 			break;
 	// 	}
 
-	// 	switch(rollDie(6)){
+		function sixSides(roll){
+			roll = rollDie(6);
+		}
 	// 		case num1:
 	// 			alert("Plane overhead");
 	// 		break;
@@ -113,9 +121,7 @@ function initialPrompt(stressPoints){
 	// 		alert("Crickets");
 	// 		break;
 	// }
-if (roll == 1){}
-		else if (roll == ){}
-		else{}
+		
 
 
 }

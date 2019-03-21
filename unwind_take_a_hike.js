@@ -4,10 +4,10 @@
 // with different numbers of sides. The value of the side that is rolled will decide the paths taken in the game. The game will
 // end at the conclusion of the path. The goal of this game is that it's short enough that it can fit into a short break and 
 // long enough to help ease the user's mind.
-
+"use strict";
 
 function initialPrompt(){
-	let stressPoints = prompt("Please enter your stress score. A suggested point value is between 15 and 30 points.");
+	let stressPoints = prompt("Please rate your stess score between 0 and 42 and enter the number it in the box below.");
 	let currentPoints = Math.floor(parseInt(stressPoints));	
 	let newScore;	
 	
@@ -51,7 +51,6 @@ function initialPrompt(){
 	alert("You rolled: " + resultSixSided);
 	sixSided(resultSixSided);
 	newScore = pointCalc(resultSixSided, newScore);
-	alert("Your final score is: " + newScore);
 
 	endAlert(newScore);
 }
@@ -169,7 +168,7 @@ function sixSided(roll){
 	}
 }
 
-function endAlert(newScore){;
+function endAlert(newScore){
 
 	if (newScore <= 0){
 		alert("Congratulations! You rolled away all of your stress points! It looks like you have gotten enough time away.")

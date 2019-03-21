@@ -21,7 +21,7 @@ function gameLoop(initialAlert, rollResult, rollAlert, scoreAlert){
 		}
 		
 	function nineSided(rollResult){
-		initialAlert = alert("Roll a virtual nine sided die to see how many breaths to take.");
+		initialAlert = alert("Roll a virtual nine sided die to see how many deep breaths to take.");
 		rollResult = rollDie(9);
 		rollAlert = alert("You rolled: " + rollResult);
 
@@ -41,24 +41,24 @@ function gameLoop(initialAlert, rollResult, rollAlert, scoreAlert){
 
 
 	function fiveSided(rollResult){
-		initialAlert = alert("Roll a virtual five sided die to see where we will be visualizing ourself.");
+		initialAlert = alert("Roll a virtual five sided die to see where we will be, in order to form a calming picture.");
 		rollResult = rollDie(5);
 		rollAlert = alert("You rolled: " + rollResult);
 
 		if (rollResult == 1){
-			alert("Imagine sitting in a city park.");
+			alert("Imagine sitting comfortably on a wooden bench in a city park. You see the people passing, some pass quickly and others pass slowly. You can hear the cars as they hum by in the distance.");
 		}
 		else if (rollResult == 2){
-			alert("Imagine yourself sitting in a park with a pond.");
+			alert("Visualize yourself sitting in a park by a small pond. As the ducks swim by they leave ripples in the water.");
 		}
 		else if (rollResult == 3){
-			alert("Imagine yourself doing something relaxing");
+			alert("Imagine yourself sitting in the middle of a meadow. The flowers nearly stand at eye level.");
 		}
 		else if (rollResult == 4){
-			alert("Imagine yourself up north sitting on the dock of a small lake.");
+			alert("Visualize yourself up north in a secluded area, sitting on the dock of a small lake. The stillness can be felt deep within you.");
 		}
 		else{
-			alert("Imagine yourself standing in a national park.");
+			alert("Imagine yourself standing in a national park. The mountains can be seen in the distance. The fresh air gently blows through the grass and trees.");
 		}
 
 		newScore = pointCalc(rollResult, newScore);
@@ -66,21 +66,21 @@ function gameLoop(initialAlert, rollResult, rollAlert, scoreAlert){
 	}
 
 	function fourSided(rollResult){
-		initialAlert = alert("Roll a virtual  pair of four sided dice...");
+		initialAlert = alert("Roll a virtual pair of four sided dice in order to know the time of day.");
 		rollResult = rollTwoDice(4);
 		rollAlert = alert("You rolled: " + rollResult);
 
 		if (rollResult < 3){
-			alert("Early afternoon, 2 pm");
+			alert("It's currently early afternoon, around 2 pm. The sun has a gentle and warm glow.");
 		}
 		else if (rollResult <= 4){
-			alert("Noon");
+			alert("It's currently noon, the middle of the day. The sun can be seen high over head.");
 		}
 		else if (rollResult < 7){
-			alert("Late morning, 9:30 am");
+			alert("It's currently late in the morning, 9:00 am. You feel the warmth of the sun on your back.");
 		}
 		else{
-			alert("Early morning, 7 am");
+			alert("It's currently early morning, 5 am. The world seemingly has not quite woken up yet. You can taste the morning dew.");
 		}
 
 		newScore = pointCalc(rollResult, newScore);
@@ -88,18 +88,18 @@ function gameLoop(initialAlert, rollResult, rollAlert, scoreAlert){
 	}
 
 	function threeSided(rollResult){
-		initialAlert = alert("Roll a virtual pair of three sided dice...");
+		initialAlert = alert("Roll a virtual pair of three sided dice for the weather report.");
 		rollResult = rollTwoDice(3);
 		rollAlert = alert("You rolled: " + rollResult);
 
 		if (rollResult < 3){
-			alert("75 degrees with sporadic clouds.");
+			alert("Today the sun shows itself through sporadic clouds. A warm breeze cascades past you and through the brush.");
 		}
 		else if (rollResult <= 4){
-			alert("79 degrees and sunny");
+			alert("Today is 79 degrees and no clouds can be found. The sky paints itself in a vibrant blue.");
 		}
 		else{
-			alert("82 degrees and lightly cloudy with a cool breeze.");
+			alert("Although today is a little warm, 82 degrees, the cool breeze blows the whisps of clouds overhead.");
 		}
 
 		newScore = pointCalc(rollResult, newScore);
@@ -107,15 +107,15 @@ function gameLoop(initialAlert, rollResult, rollAlert, scoreAlert){
 	}
 
 	function eightSided(rollResult){
-		initialAlert = alert("Roll a virtual eight sided die...");
+		initialAlert = alert("Roll a virtual eight sided die for some extra warmth.");
 		rollResult = rollDie(8);
 		rollAlert = alert("You rolled: " + rollResult);
 
 		if (rollResult % 2 == 0){
-			alert("Cup of coffee.");
+			alert("You have a cup of hot coffee from your choice cafe in hand. You hold it close and breathe in the steam.");
 		}
 		else{
-			alert("Cup of tea.");
+			alert("You have a cup of hot coffee from your choice cafe in hand. You hold it close and breathe in the steam.");
 		}
 
 		newScore =  pointCalc(rollResult, newScore);
@@ -124,27 +124,24 @@ function gameLoop(initialAlert, rollResult, rollAlert, scoreAlert){
 
 
 	function sixSided(rollResult){
-		initialAlert = alert("Roll a virtual six sided die...");
+		initialAlert = alert("Roll a virtual six sided die for some surrounding sounds.");
 		rollResult = rollDie(6);
 		rollAlert = alert("You rolled: " + rollResult);
 
 		if (rollResult == 1){
-			alert("Plane overhead");
+			alert("You notice a plane overhead. You heard it all at once and then slowly fade into the distance.");
 		}
 		else if (rollResult == 2){
-			alert("Wood pecker");
+			alert("The squirrels can be heard as they climb trees.");
 		}
 		else if (rollResult == 3){
-			alert("Squirrels climbing trees");
+			alert("The birds sing their songs to each other. If you can, you whistle in tune with them. Whistling back in your head counts.");
 		}
 		else if (rollResult == 4){
-			alert("Birds singing");
+			alert("You can hear the rustling of trees and bushes as the wind passes through them.");
 		}
-		else if (rollResult == 5){
-			alert("Rustling of trees and bushes");
-		}
-		else{
-			alert("Crickets");
+		else {
+			alert("The light chirping of crickets can be heard nearby.");
 		}
 
 		newScore = pointCalc(rollResult, newScore);

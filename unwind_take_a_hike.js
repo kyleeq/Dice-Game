@@ -10,16 +10,16 @@
 "use strict";
 
 function gameLoop(initialAlert, rollResult, rollAlert, scoreAlert){
-	alert("Let's take some time out of our day to do a little interactive meditation.")
+	alert("Let's take some time out of our day to do a little interactive meditation.");
 	let stressPoints = prompt("Please rate your stess score between 0 and 42 and enter the number in the box below.");
-		if (isNaN(stressPoints) == true){
-			alert("Nice try but we're going to need a number for this exercise!")
-			gameLoop();
-		}
-
 	let currentPoints = Math.floor(parseInt(stressPoints));
 	let newScore;
-
+		if (isNaN(stressPoints) == true){
+			alert("Nice try but we're going to need a number for this exercise!");
+			gameLoop();
+			return;
+		}
+		
 	function nineSided(rollResult){
 		initialAlert = alert("Roll a virtual nine sided die to see how many breaths to take.");
 		rollResult = rollDie(9);
@@ -161,10 +161,10 @@ function gameLoop(initialAlert, rollResult, rollAlert, scoreAlert){
 	function endAlert(newScore){
 
 		if (newScore <= 0){
-			alert("Congratulations! You rolled away all of your stress points! It looks like you have gotten enough time away.")
+			alert("Congratulations! You rolled away all of your stress points! It looks like you have gotten enough time away.");
 		}
 		else{
-			alert("Thanks for playing! It looks like you might need some more mental space because you still have " + newScore + " points left. Feel free to play again!")
+			alert("Thanks for playing! It looks like you might need some more mental space because you still have " + newScore + " points left. Feel free to play again!");
 		}
 	}
 
@@ -185,4 +185,4 @@ function gameLoop(initialAlert, rollResult, rollAlert, scoreAlert){
 		return newScore;
 	}
 }
-gameLoop()
+gameLoop();
